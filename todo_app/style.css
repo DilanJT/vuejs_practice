@@ -1,0 +1,33 @@
+
+.container{
+    margin: 0 auto;
+    width: 80%;
+    padding: 30px;
+    background-color: paleturquoise;
+    text-align: center;
+}
+
+.text-input-container{
+    padding: 10px;
+}
+
+.todo-list-container{
+    background-color: rgb(211, 168, 182);
+    width: 50%;
+    margin: 0 auto;
+}
+
+.list-item{
+    border-bottom: solid 2px rgb(114, 6, 109);
+    padding: 5px;
+    text-align: left;
+}
+
+.item-button{
+    float: right;
+}
+
+span{
+    color: rgb(114, 6, 109);
+    font-weight: bold;
+}
