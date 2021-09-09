@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event modifiers</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        #canvas{
+            width: 900px;
+            padding: 200px 20px;
+            text-align: center;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button v-on:click="age++">Add a year</button>
+        <button v-on:click="age--">Substract year</button>
+        <button v-on:dblclick="age+=10">Add 10 years</button>
+        <button v-on:dblclick="age-=10">Substract 10 years</button>
+        
+        <p>Age: {{ age }}</p>
+
+        <div id="canvas" v-on:mousemove="updateXY">{{ x }}, {{ y }}</div>
+        <a v-on:click.prevent="click" href="http://www.google.com">google</a> 
+        <!-- .prevent modifier prevents from redirecting to the link -->
+
+        <div class="outer">
+            outer
+            <div class="middle" v-on:click.capture="doThis">
+                middle
+                <div class="inner" >inner</div>
+            </div>
+        </div>
+
+        <h1>Keyboard Events</h1>
+        <label>Name:</label>
+        <input type="text" v-on:keyup.enter="logName"/>
+        <label>Age:</label>
+        <input type="text" v-on:keyup.elt.enter="logAge"/>
+
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
